@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BeatFlow music streaming interface by cafecraft.media">
+  <title>BeatFlow — Music for every mood</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <button class="close-menu" id="closeMenu" aria-label="Close menu">×</button>
+    <a href="#home" class="logo"><span>ϟ</span> BeatFlow</a>
+    <nav>
+      <a href="#home" class="active">⌂ <span>Home</span></a>
+      <a href="#discover">◈ <span>Discover</span></a>
+      <a href="#library">▣ <span>Library</span></a>
+      <a href="#playlists">☷ <span>Playlists</span></a>
+      <a href="#albums">◫ <span>Albums</span></a>
+      <a href="#artists">◎ <span>Artists</span></a>
+    </nav>
+    <div class="sidebar-title"><span>MY PLAYLISTS</span><button aria-label="Add playlist">＋</button></div>
+    <div class="mini-playlists" id="miniPlaylists"></div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+      <div class="history"><button aria-label="Back">‹</button><button aria-label="Forward">›</button></div>
+      <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search songs, artists, albums..." aria-label="Search music"></label>
+      <button class="profile"><span class="avatar">C</span><b>cafecraft.media</b><span>⌄</span></button>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">FEATURED ALBUM</span>
+        <h1>Midnight<br>Pulse</h1>
+        <h3><span class="artist-dot"></span> BeatFlow Originals</h3>
+        <p>Original instrumental sounds for late nights and electric moments.</p>
+        <div class="hero-buttons">
+          <button class="primary" id="heroPlay">▶ Play now</button>
+          <button class="secondary" id="saveAlbum">＋ Save</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-results hidden" id="searchResults">
+      <span class="eyebrow">SEARCH</span>
+      <h2 id="searchTitle">Search results</h2>
+      <div class="results-list" id="resultsList"></div>
+    </section>
+
+    <div id="mainContent">
+      <section class="content-section" id="playlists">
+        <div class="section-heading"><div><span class="eyebrow">CURATED FOR YOU</span><h2>Made for You</h2></div><button>See all →</button></div>
+        <div class="playlist-grid" id="playlistGrid"></div>
+      </section>
+
+      <section class="content-section" id="albums">
+        <div class="section-heading"><div><span class="eyebrow">FRESH RELEASES</span><h2>Popular Albums</h2></div></div>
+        <div class="album-grid" id="albumGrid"></div>
+      </section>
+
+      <section class="content-section" id="artists">
+        <div class="section-heading"><div><span class="eyebrow">ARTISTS TO WATCH</span><h2>Popular Artists</h2></div></div>
+        <div class="artist-grid" id="artistGrid"></div>
+      </section>
+    </div>
+
+    <footer><b>BeatFlow</b><p>Discover your next favorite sound.</p><small>Original demo music generated in your browser.</small></footer>
+  </main>
+
+  <section class="player" aria-label="Music player">
+    <div class="now-playing"><div class="track-cover sunset" id="playerCover"></div><div><b id="trackTitle">Neon Echoes</b><small id="trackArtist">BeatFlow Originals</small></div><button id="favoriteButton" aria-label="Favorite track">♡</button></div>
+    <div class="player-center">
+      <div class="controls"><button id="previousButton" aria-label="Previous">▮◀</button><button class="play-button" id="playButton" aria-label="Play">▶</button><button id="nextButton" aria-label="Next">▶▮</button></div>
+      <div class="timeline"><span id="currentTime">0:00</span><input id="progress" type="range" min="0" max="100" value="0" aria-label="Track progress"><span id="duration">3:48</span></div>
+    </div>
+    <div class="volume"><span>◀))</span><input id="volume" type="range" min="0" max="100" value="65" aria-label="Volume"></div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
